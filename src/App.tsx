@@ -2,6 +2,7 @@
 import { Box, Container } from '@mui/material';
 import './App.css';
 import { Header } from './components/Header';
+import { FilmList } from './components/FilmList';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         py={2}
       >
         <Container>
-          
+          <FilmList />
 
         </Container>
       </Box>
