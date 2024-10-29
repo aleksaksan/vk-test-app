@@ -12,6 +12,7 @@ export const FilmList = () => {
     <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
       {mock.map(film => (
         <FilmCard
+          key={film.id}
           id={film.id}
           title={film.title}
           src={film.medium_cover_image}
