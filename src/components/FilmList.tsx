@@ -1,6 +1,7 @@
 import Grid from '@mui/material/Grid2';
 import mockData from '../assets/tempMockData.json';
 import { FilmCard } from './FilmCard';
+import { SkeletonCard } from './SkeletonCard';
 
 
 
@@ -15,10 +16,9 @@ export const FilmList = () => {
           title={film.title}
           src={film.medium_cover_image}
           year={film.year}
-          key={film.id}
-          isLoading={false}
         />
       ))}
+      <SkeletonCard />
         
     </Grid>
   );
