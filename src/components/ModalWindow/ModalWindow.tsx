@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import styles from './ModalWindow.module.scss';
+import { createPortal } from 'react-dom';
 
 export const ModalWindow = (
   {
@@ -15,11 +16,12 @@ export const ModalWindow = (
   if (visible)
     rootClasses.push(styles.active);
 
-  return (
+  return createPortal(
     <div className={rootClasses.join(' ')} onClick={() => setVisible(false)} >
       <div className={styles.modalContent} onClick={(e) => e.stopPropagation()} >
         {children}
       </div>
-    </div>
+    </div>,
+    document.getElementById('modal-root')!
   );
 };
