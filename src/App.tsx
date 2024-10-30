@@ -4,7 +4,6 @@ import './App.css';
 import { Header } from './components/Header';
 import { FilmList } from './components/FilmList';
 import { SortSelect } from './components/SortSelect';
-import TempList from './components/TempList';
 
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
       flexDirection="column"
       height="100vh"
     >
-    <TempList />
       <Header/>
       <SortSelect />
       <Box 
@@ -25,7 +23,6 @@ function App() {
       >
         <Container>
           <FilmList />
-
         </Container>
       </Box>
     </Box>
