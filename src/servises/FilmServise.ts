@@ -24,7 +24,6 @@ export class FilmService {
       }
     });
     return response.data.data;
-    // return response.data.data.movies;
   };
 
   static async getFilmsByPagesWithSort(limit = 10, page = 1, sortBy: FilmSortAttributeEnum) {
