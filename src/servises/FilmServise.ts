@@ -13,7 +13,7 @@ export class FilmService {
   static async getAll() {
     const response = await axios.get('https://yts.mx/api/v2/list_movies.json');
     
-    return response.data.data.movies;
+    return response.data.data;
   };
 
   static async getFilmsByPages(limit = 10, page = 1) {
@@ -23,7 +23,8 @@ export class FilmService {
         page: page,
       }
     });
-    return response.data.data.movies;
+    return response.data.data;
+    // return response.data.data.movies;
   };
 
   static async getFilmsByPagesWithSort(limit = 10, page = 1, sortBy: FilmSortAttributeEnum) {
@@ -34,7 +35,7 @@ export class FilmService {
         sort_by: sortBy,
       }
     });
-    return response.data.data.movies;
+    return response.data.data;
   }
   
 };

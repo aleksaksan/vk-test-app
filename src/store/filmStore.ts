@@ -6,33 +6,38 @@ class FilmStore {
   films: IFilm[] = [];
   isLoading = false;
   error: string | null = null;
-  limit = 18;
+  limit = 15;
   page = 1;
   sortBy?: FilmSortAttributeEnum;
-  totalPages = 1;
+  totalFilms = this.limit;
+
+  get totalPages() {
+    return Math.ceil(this.totalFilms / this.limit);
+  }
 
   constructor () {
     makeAutoObservable(this);
   };
 
-  getFilms = async () => {
-    try {
-      this.isLoading = true;
-      this.error = null;
+  // getFilms = async () => {
+  //   try {
+  //     this.isLoading = true;
+  //     this.error = null;
 
-      const res = await FilmService.getAll();
+  //     const res = await FilmService.getAll();
       
-      runInAction(() => {
-        this.films = [...toJS(this.films), ...res];
-        this.isLoading = false;
-      })
-    } catch (e) {
-      console.log(e);
-      runInAction(() => {
-        this.isLoading = false;
-      })
-    }
-  };
+  //     runInAction(() => {
+  //       this.totalFilms = res.movie_count;
+  //       this.films = [...toJS(this.films), ...res.movies];
+  //       this.isLoading = false;
+  //     })
+  //   } catch (e) {
+  //     console.log(e);
+  //     runInAction(() => {
+  //       this.isLoading = false;
+  //     })
+  //   }
+  // };
 
   getFilmsByPages = async () => {
     if (this.page > this.totalPages) {
@@ -47,7 +52,8 @@ class FilmStore {
         const res = await FilmService.getFilmsByPagesWithSort(this.limit, this.page, this.sortBy);
         
         runInAction(() => {
-          this.films = [...toJS(this.films), ...res];
+          this.totalFilms = res.movie_count;
+          this.films = [...toJS(this.films), ...res.movies];
           this.isLoading = false;
         });
         
@@ -55,7 +61,8 @@ class FilmStore {
         const res = await FilmService.getFilmsByPages(this.limit, this.page);
         
         runInAction(() => {
-          this.films = [...toJS(this.films), ...res];
+          this.totalFilms = res.movie_count;
+          this.films = [...toJS(this.films), ...res.movies];
           this.isLoading = false;
         });
       }

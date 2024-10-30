@@ -4,18 +4,18 @@ import './App.css';
 import { Header } from './components/Header';
 import { FilmList } from './components/FilmList';
 import { SortSelect } from './components/SortSelect';
-import TempList from './components/TempList';
 
 
 function App() {
   
+
   return (
     <Box 
       display="flex" 
       flexDirection="column"
       height="100vh"
     >
-    <TempList />
+    {/* <TempList /> */}
       <Header/>
       <SortSelect />
       <Box 
