@@ -5,6 +5,7 @@ import { Header } from './components/Header';
 import { FilmList } from './components/FilmList';
 import { SortSelect } from './components/SortSelect';
 import { ModalDelete } from './components/ModalDelete';
+import { ModalEdit } from './components/ModalEdit';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       </Box>
       
       <ModalDelete />
+      <ModalEdit />
     </>
   )
 }

@@ -39,10 +39,11 @@ class FilmStore {
     this.chosenFilmId = id ?? null;
   };
 
-  edditFilm = (id: number, title: string, year: number) => {
-    const film = this.films.find(film => film.id === id);
+  edditFilm = (title: string, year: number) => {
+    const film = this.films.find(film => film.id === this.chosenFilmId);
     film!.title =  title;
     film!.year = year;
+    this.setIsEdditing(false);
   };
 
 

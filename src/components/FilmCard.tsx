@@ -31,6 +31,11 @@ export const FilmCard = observer(({id, title, src, year}: FilmCardType) => {
     setIsDeleting(true, id);
   };
 
+  const handleEditClick = () => {
+    handleMenuClose();
+    setIsEdditing(true, id);
+  }
+
   return (
     <Grid key={id} size={{ xs: 2, sm: 4, md: 4 }}>
       <Card
@@ -51,7 +56,7 @@ export const FilmCard = observer(({id, title, src, year}: FilmCardType) => {
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
           >
-            <MenuItem onClick={() => { handleMenuClose(); setIsEdditing(true); }}>Редактировать</MenuItem>
+            <MenuItem onClick={handleEditClick}>Редактировать</MenuItem>
             <MenuItem onClick={handleDeleteClick}>Удалить</MenuItem>
           </Menu>
         </CardActions>
