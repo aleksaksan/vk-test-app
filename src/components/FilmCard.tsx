@@ -2,6 +2,8 @@ import { Box, Card, CardActions, CardContent, CardMedia, IconButton, Menu, MenuI
 import Grid from '@mui/material/Grid2';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useState } from 'react';
+import { observer } from 'mobx-react-lite';
+import filmStore from '../store/filmStore';
 
 export type FilmCardType = {
   id: number;
@@ -11,8 +13,10 @@ export type FilmCardType = {
 }
 
 
-export const FilmCard = ({id, title, src, year}: FilmCardType) => {
+export const FilmCard = observer(({id, title, src, year}: FilmCardType) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  const { setIsEdditing, setIsDeleting } = filmStore;
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -21,6 +25,17 @@ export const FilmCard = ({id, title, src, year}: FilmCardType) => {
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
+
+  const handleDeleteClick = () => {
+    handleMenuClose();
+    setIsDeleting(true, id);
+  };
+
+  const handleEditClick = () => {
+    handleMenuClose();
+    setIsEdditing(true, id);
+  }
+
   return (
     <Grid key={id} size={{ xs: 2, sm: 4, md: 4 }}>
       <Card
@@ -41,8 +56,8 @@ export const FilmCard = ({id, title, src, year}: FilmCardType) => {
             open={Boolean(anchorEl)}
             onClose={handleMenuClose}
           >
-            <MenuItem onClick={() => { handleMenuClose(); }}>Редактировать</MenuItem>
-            <MenuItem onClick={() => { handleMenuClose(); }}>Удалить</MenuItem>
+            <MenuItem onClick={handleEditClick}>Редактировать</MenuItem>
+            <MenuItem onClick={handleDeleteClick}>Удалить</MenuItem>
           </Menu>
         </CardActions>
         
@@ -75,4 +90,4 @@ export const FilmCard = ({id, title, src, year}: FilmCardType) => {
       </Card>
     </Grid>
   );
-};
+});
