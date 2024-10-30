@@ -8,14 +8,12 @@ import { SortSelect } from './components/SortSelect';
 
 function App() {
   
-
   return (
     <Box 
       display="flex" 
       flexDirection="column"
       height="100vh"
     >
-    {/* <TempList /> */}
       <Header/>
       <SortSelect />
       <Box 
@@ -25,7 +23,6 @@ function App() {
       >
         <Container>
           <FilmList />
-
         </Container>
       </Box>
     </Box>

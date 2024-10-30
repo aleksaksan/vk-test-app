@@ -19,26 +19,6 @@ class FilmStore {
     makeAutoObservable(this);
   };
 
-  // getFilms = async () => {
-  //   try {
-  //     this.isLoading = true;
-  //     this.error = null;
-
-  //     const res = await FilmService.getAll();
-      
-  //     runInAction(() => {
-  //       this.totalFilms = res.movie_count;
-  //       this.films = [...toJS(this.films), ...res.movies];
-  //       this.isLoading = false;
-  //     })
-  //   } catch (e) {
-  //     console.log(e);
-  //     runInAction(() => {
-  //       this.isLoading = false;
-  //     })
-  //   }
-  // };
-
   getFilmsByPages = async () => {
     if (this.page > this.totalPages) {
       return;
