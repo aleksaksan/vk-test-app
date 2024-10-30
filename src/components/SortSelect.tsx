@@ -1,18 +1,17 @@
 import { Box, Container, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { useState } from "react";
+import { FilmSortAttributeEnum } from "../shared/enums/FilmSortAttributeEnum";
+import { observer } from "mobx-react-lite";
+import filmStore from "../store/filmStore";
 
-enum FilmAttribute {
-  Title = 'Название',
-  Year = 'Год',
-  Rating = 'Рейтинг',
-  DateAdded = 'Дата добавления'
-}
 
-export const SortSelect = () => {
+export const SortSelect = observer(() => {
   const [field, setField] = useState('');
+  const { changeSorting } = filmStore;
 
   const handleChange = (event: SelectChangeEvent) => {
     setField(event.target.value);
+    changeSorting(event.target.value as FilmSortAttributeEnum);
   };
 
   return (
@@ -27,13 +26,13 @@ export const SortSelect = () => {
             label="Сортировать по"
             onChange={handleChange}
           >
-            <MenuItem value={"title"}>{FilmAttribute.Title}</MenuItem>
-            <MenuItem value={"year"}>{FilmAttribute.Year}</MenuItem>
-            <MenuItem value={"rating"}>{FilmAttribute.Rating}</MenuItem>
-            <MenuItem value={"date_added"}>{FilmAttribute.DateAdded}</MenuItem>
+            <MenuItem value={FilmSortAttributeEnum.Title}>Название</MenuItem>
+            <MenuItem value={FilmSortAttributeEnum.Year}>Год</MenuItem>
+            <MenuItem value={FilmSortAttributeEnum.Rating}>Рейтинг</MenuItem>
+            <MenuItem value={FilmSortAttributeEnum.DateAdded}>Дата добавления</MenuItem>
           </Select>
         </FormControl>
       </Box>
     </Container>
   );
-}
+});
