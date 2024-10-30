@@ -1,16 +1,13 @@
 
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import './App.css';
 import { Header } from './components/Header';
 import { FilmList } from './components/FilmList';
 import { SortSelect } from './components/SortSelect';
-import { ModalWindow } from './components/ModalWindow/ModalWindow';
-import { useState } from 'react';
+import TempList from './components/TempList';
 
 
 function App() {
-
-  const [visible, setVisible] = useState(true);
   
   return (
     <Box 
@@ -18,6 +15,7 @@ function App() {
       flexDirection="column"
       height="100vh"
     >
+    <TempList />
       <Header/>
       <SortSelect />
       <Box 
@@ -30,14 +28,6 @@ function App() {
 
         </Container>
       </Box>
-      <ModalWindow setVisible={setVisible} visible={visible}>
-        <Typography variant="h6" component="h2" gutterBottom>
-          Это модальное окно
-        </Typography>
-        <Typography variant="body1">
-          Здесь находится контент модального окна.
-        </Typography>
-      </ModalWindow>
     </Box>
   )
 }
