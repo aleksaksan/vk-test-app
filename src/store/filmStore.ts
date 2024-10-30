@@ -10,6 +10,9 @@ class FilmStore {
   page = 1;
   sortBy?: FilmSortAttributeEnum;
   totalFilms = this.limit;
+  isEdditing = false;
+  isDeleting = false;
+  chosenFilmId: number | null = null;
 
   get totalPages() {
     return Math.ceil(this.totalFilms / this.limit);
@@ -19,6 +22,31 @@ class FilmStore {
     makeAutoObservable(this);
   };
 
+  //delete film
+  setIsDeleting = (value: boolean, id?: number) => {
+    this.isDeleting = value;
+    this.chosenFilmId = id ?? null;
+  };
+
+  deleteFilm = () => {
+    this.films = this.films.filter(film => film.id !== this.chosenFilmId);
+    this.setIsDeleting(false);
+  };
+
+  //eddit film
+  setIsEdditing = (value: boolean, id?: number) => {
+    this.isEdditing = value;
+    this.chosenFilmId = id ?? null;
+  };
+
+  edditFilm = (id: number, title: string, year: number) => {
+    const film = this.films.find(film => film.id === id);
+    film!.title =  title;
+    film!.year = year;
+  };
+
+
+  //fetching 
   getFilmsByPages = async () => {
     if (this.page > this.totalPages) {
       return;
