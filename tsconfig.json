@@ -2,7 +2,7 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["@testing-library/jest-dom"],
+    "types": ["@testing-library/jest-dom", "vite/client", "jest"],
     "module": "ESNext",
     "moduleResolution": "Node",
     "esModuleInterop": true,
