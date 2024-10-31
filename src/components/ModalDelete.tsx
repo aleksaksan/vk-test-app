@@ -1,4 +1,3 @@
-import React from 'react';
 import { ModalWindow } from './ModalWindow/ModalWindow';
 import filmStore from '../store/filmStore';
 import { Box, Button, Typography } from '@mui/material';
