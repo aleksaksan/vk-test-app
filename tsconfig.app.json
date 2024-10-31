@@ -5,6 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": [],
 
     /* Bundler mode */
     "moduleResolution": "Bundler",
@@ -21,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src/**/*", "src/jest.setup.ts", "babel.config.cjs", "jest.config.js"]
+  "include": ["src/**/*", "./src/**/**.*", "src/jest.setup.ts", "babel.config.cjs", "jest.config.ts", "src/types.d.ts"]
 }

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import styles from './ModalWindow.module.scss';
+import styles from './ModalWindow.module.css';
 import { createPortal } from 'react-dom';
 
 export const ModalWindow = (

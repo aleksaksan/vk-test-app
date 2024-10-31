@@ -1,8 +1,8 @@
 import { Box, Container, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material";
 import { useState } from "react";
-import { FilmSortAttributeEnum } from "../shared/enums/FilmSortAttributeEnum";
+import { FilmSortAttributeEnum } from "../../shared/enums/FilmSortAttributeEnum";
 import { observer } from "mobx-react-lite";
-import filmStore from "../store/filmStore";
+import filmStore from "../../store/filmStore";
 
 
 export const SortSelect = observer(() => {

@@ -1,7 +1,8 @@
-import { ModalWindow } from './ModalWindow/ModalWindow';
-import filmStore from '../store/filmStore';
 import { Box, Button, Typography } from '@mui/material';
 import { observer } from 'mobx-react-lite';
+import filmStore from '../../store/filmStore';
+import { ModalWindow } from '../ModalWindow/ModalWindow';
+
 
 export const ModalDelete = observer(() => {
   const { isDeleting, setIsDeleting, deleteFilm } = filmStore;

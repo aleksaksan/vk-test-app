@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid2';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useState } from 'react';
 import { observer } from 'mobx-react-lite';
-import filmStore from '../store/filmStore';
+import filmStore from '../../store/filmStore';
 
 export type FilmCardType = {
   id: number;
