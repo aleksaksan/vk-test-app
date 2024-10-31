@@ -1,3 +1,5 @@
+
+import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
 import { FilmList } from './FilmList';
 import filmStore from '../../store/filmStore';
@@ -57,7 +59,7 @@ describe('FilmList component', () => {
 
   //   render(<FilmList />);
 
-  //   const errorMessage = screen.getByText(/Something wents wrong!!!/i);
+  //   const errorMessage = screen.getByText(/something wents wrong/i);
   //   expect(errorMessage).toBeInTheDocument();
   // });
   
