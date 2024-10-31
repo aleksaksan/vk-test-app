@@ -9,5 +9,5 @@ export default {
     "^.+\\.svg$": "jest-transformer-svg",
   },
 
-  setupFilesAfterEnv: ["<rootDir>/src/jest.setup.ts"],
+  setupFilesAfterEnv: ["<rootDir>/src/jest.setup.ts"]
 };

@@ -1,10 +1,10 @@
 import Grid from '@mui/material/Grid2';
-import { FilmCard } from './FilmCard';
-import { SkeletonCard } from './SkeletonCard';
+import { FilmCard } from '../FilmCard/FilmCard';
+import { SkeletonCard } from '../SkeletonCard/SkeletonCard';
 import { useEffect, useRef } from 'react';
-import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import { observer } from 'mobx-react-lite';
-import filmStore from '../store/filmStore';
+import filmStore from '../../store/filmStore';
 
 
 

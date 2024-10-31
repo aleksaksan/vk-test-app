@@ -1,8 +1,8 @@
 import { observer } from 'mobx-react-lite';
 import { useEffect, useState } from 'react';
-import { ModalWindow } from './ModalWindow/ModalWindow';
 import { Box, Button, TextField } from '@mui/material';
-import filmStore from '../store/filmStore';
+import filmStore from '../../store/filmStore';
+import { ModalWindow } from '../ModalWindow/ModalWindow';
 
 export const ModalEdit = observer(() => {
   const { isEdditing, setIsEdditing, edditFilm, chosenFilmId, films } = filmStore;
@@ -27,6 +27,10 @@ export const ModalEdit = observer(() => {
         component="form"
         noValidate
         autoComplete="off"
+        display="flex"
+        flexDirection="column"
+        gap={4}
+        minWidth={340}
         onSubmit={(e)=>{e.preventDefault()}}
       >
         <TextField
@@ -45,7 +49,7 @@ export const ModalEdit = observer(() => {
         />
         
         <Box
-          sx={{ p: 2, marginTop: 4, display: 'flex', justifyContent: 'space-around'}}
+          sx={{ p: 2, display: 'flex', justifyContent: 'space-around'}}
         >
           <Button type='submit' variant='outlined' onClick={SubmitHandler}>Сохранить</Button>
           <Button variant='outlined' onClick={()=>setIsEdditing(false)}>Отмена</Button>

@@ -1,11 +1,11 @@
 
 import { Box, Container } from '@mui/material';
 import './App.css';
-import { Header } from './components/Header';
-import { FilmList } from './components/FilmList';
-import { SortSelect } from './components/SortSelect';
-import { ModalDelete } from './components/ModalDelete';
-import { ModalEdit } from './components/ModalEdit';
+import { Header } from './components/Header/Header';
+import { FilmList } from './components/FilmList/FilmList';
+import { SortSelect } from './components/SortSelect/SortSelect';
+import { ModalDelete } from './components/ModalDelete/ModalDelete';
+import { ModalEdit } from './components/ModalEdit/ModalEdit';
 
 
 function App() {
