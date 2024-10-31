@@ -63,9 +63,7 @@ describe('FilmList component', () => {
   
   //не смог решить проблему - тест валится только в этом месте
   // ● Test suite failed to run
-
   // src/components/FilmList/FilmList.spec.tsx:61:26 - error TS2339: Property 'toBeInTheDocument' does not exist on type 'JestMatchers<HTMLElement>'.
-
   // 61     expect(errorMessage).toBeInTheDocument();
 
   test('calls useIntersectionObserver', () => {
