@@ -24,12 +24,15 @@ export const FilmList = observer(() => {
   return (
     <>
       {error ? 
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+        <Grid container spacing={{ xs: 1, md: 2, lg: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
           <h2>Something wents wrong!!!</h2>
         </Grid>
       :
       <>
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+        <Grid container spacing={{ xs: 1, md: 2, lg: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}
+          justifyContent={{ xs: 'center'}}
+          alignItems="center"
+        >
           {films.map(film => (
             <FilmCard
               key={film.id}
