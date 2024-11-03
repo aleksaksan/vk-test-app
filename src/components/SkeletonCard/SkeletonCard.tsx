@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid2';
 
 export const SkeletonCard = () => {
   return (
-    <Grid size={{ xs: 2, sm: 4, md: 4 }}>
+    <Grid>
       <Card
         sx={{
           m: 2,
@@ -11,6 +11,7 @@ export const SkeletonCard = () => {
           display: 'flex',
           flexDirection: 'column',
           padding: 2,
+          width: 300,
         }}
       >
         <Box sx={{ p: 1, display: 'flex', justifyContent: 'center' }}>
