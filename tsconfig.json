@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "resolveJsonModule": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "types": ["@testing-library/jest-dom", "vite/client", "jest"],
     "module": "ESNext",
