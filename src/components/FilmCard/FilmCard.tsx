@@ -37,7 +37,7 @@ export const FilmCard = observer(({id, title, src, year}: FilmCardType) => {
   }
 
   return (
-    <Grid key={id} size={{ xs: 2, sm: 4, md: 4 }}>
+    <Grid key={id}>
       <Card
         sx={{
           m: 2,
@@ -45,6 +45,8 @@ export const FilmCard = observer(({id, title, src, year}: FilmCardType) => {
           display: 'flex',
           flexDirection: 'column',
           padding: 2,
+          width: 300,
+          
         }}
       >
         <CardActions sx={{ position: 'absolute', top: 8, right: 8 }}>
@@ -61,7 +63,7 @@ export const FilmCard = observer(({id, title, src, year}: FilmCardType) => {
           </Menu>
         </CardActions>
         
-        <Box sx={{ p: 1, display: 'flex', justifyContent: 'center' }}>
+        <Box sx={{ p: 1, display: 'flex', justifyContent: 'center', flexShrink: 0 }}>
           <CardMedia
             component="img"
             sx={{ height: 300, width: 'auto', objectFit: 'cover', borderRadius: 2 }}
